@@ -3,7 +3,8 @@ const puppeteer = require('puppeteer');
 (async () => {
     // Launch headless Chrome browser
     const browser = await puppeteer.launch({
-        headless: true // Set to false if you want to see the browser UI
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'] // Set to false if you want to see the browser UI
     });
 
     // Create a new page
